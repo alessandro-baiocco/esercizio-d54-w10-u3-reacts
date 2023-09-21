@@ -1,8 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap";
-import MyArticle from "./MyArticle";
+
 import { useEffect, useState } from "react";
 import { Article } from "../interfaces/Article";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ArticleRead = () => {
   const { id } = useParams();
@@ -31,7 +31,7 @@ const ArticleRead = () => {
           <p>{articles.summary}</p>
           <p>pubblicato da: {articles.news_site}</p>
           <p>
-            più info in: <a href={articles.url}>{articles.url}</a>
+            più info in: <Link to={`${articles.url}`}> {articles.url} </Link>
           </p>
         </Container>
       )}
