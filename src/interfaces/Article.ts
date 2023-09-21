@@ -1,4 +1,11 @@
 export interface Article {
+  count: number;
+  next: string;
+  previous: null;
+  results: Result[];
+}
+
+export interface Result {
   id: number;
   title: string;
   url: string;
@@ -8,6 +15,16 @@ export interface Article {
   published_at: Date;
   updated_at: Date;
   featured: boolean;
-  launches: any[];
-  events: any[];
+  launches: Launch[];
+  events: Event[];
+}
+
+export interface Launch {
+  launch_id: string;
+  provider: string;
+}
+
+export interface Event {
+  event_id: number;
+  provider: string;
 }

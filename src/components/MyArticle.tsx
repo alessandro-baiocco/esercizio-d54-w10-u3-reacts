@@ -1,9 +1,9 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import { Article } from "../interfaces/Article";
+import { Result } from "../interfaces/Article";
 import { Link } from "react-router-dom";
 
 interface singleArticleProps {
-  article: Article;
+  article: Result;
 }
 
 const MyArticle = ({ article }: singleArticleProps) => {

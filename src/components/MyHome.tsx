@@ -1,10 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap";
 import MyArticle from "./MyArticle";
 import { useEffect, useState } from "react";
-import { Article } from "../interfaces/Article";
+import { Result } from "../interfaces/Article";
 
 const MyHome = () => {
-  const [articles, setArticles] = useState<Article[] | null>(null);
+  const [articles, setArticles] = useState<Result[] | null>(null);
   const checkArticle = async () => {
     try {
       const resp = await fetch("https://api.spaceflightnewsapi.net/v4/articles/?limit=20");
@@ -20,7 +20,12 @@ const MyHome = () => {
   }, []);
 
   return (
-    <Container>
+    <Container
+      style={{
+        background:
+          "linear-gradient(11deg, rgba(88,92,173,0.6530987394957983) 0%, rgba(0,150,254,0.7231267507002801) 100%)",
+      }}
+    >
       <Row>
         {articles &&
           articles.map((Article) => (
