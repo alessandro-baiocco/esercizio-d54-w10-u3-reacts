@@ -8,8 +8,8 @@ interface singleArticleProps {
 
 const MyArticle = ({ article }: singleArticleProps) => {
   return (
-    <Card>
-      <Card.Img variant="top" src={article.image_url} />
+    <Card className="my-2">
+      <Card.Img variant="top" src={article.image_url} style={{ maxHeight: "142px" }} />
       <Card.Body>
         <Card.Title>{article.title}</Card.Title>
 
