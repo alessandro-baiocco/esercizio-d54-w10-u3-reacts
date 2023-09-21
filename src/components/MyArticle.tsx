@@ -1,5 +1,6 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Article } from "../interfaces/Article";
+import { Link } from "react-router-dom";
 
 interface singleArticleProps {
   article: Article;
@@ -12,7 +13,9 @@ const MyArticle = ({ article }: singleArticleProps) => {
       <Card.Body>
         <Card.Title>{article.title}</Card.Title>
 
-        <Button variant="primary">{article.id} </Button>
+        <Link to={`/article/${article.id}`}>
+          <Button variant="primary">{article.id} </Button>
+        </Link>
       </Card.Body>
     </Card>
   );
